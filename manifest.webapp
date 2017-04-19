@@ -1,0 +1,27 @@
+{
+	"version": "1.0",
+	"name": "QR Scanner",
+	"locales": {
+		"de": {
+			"name": "QR-Leser"
+		}
+	},
+	"description": "Barcode reader for QR codes and other barcodes",
+	"launch_path": "/index.html",
+	"icons": {
+		"128": "/icons/icon-128.png",
+		"512": "/icons/icon-512.png"
+	},
+	"developer": {
+		"name": "Michael Müller",
+		"url": "https://github.com/Schnark"
+	},
+	"installs_allowed_from": ["*"],
+	"default_locale": "en",
+	"orientation": "portrait-primary",
+	"permissions": {
+		"video-capture": {
+			"description": "Get barcode via camera"
+		}
+	}
+}

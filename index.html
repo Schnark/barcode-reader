@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html><head><title data-l10n-id="title">(title)</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<link rel="apple-touch-icon" sizes="180x180" href="more-icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" href="more-icons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="more-icons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="more-icons/manifest.json">
+<link rel="mask-icon" href="more-icons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="more-icons/favicon.ico">
+<meta name="msapplication-config" content="more-icons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+<link rel="stylesheet" href="app.css">
+<link rel="resource" type="application/l10n" href="l10n/locales.ini">
+<script>
+if (navigator.serviceWorker && !(navigator.mozApps && navigator.mozApps.installPackage)) {
+	navigator.serviceWorker.register('sw.js');
+}
+</script>
+<script src="js/lib/l10n.js"></script>
+<script src="js/lib/vcard.min.js"></script>
+<script src="js/reader.js"></script>
+<script src="js/parse.js"></script>
+</head><body>
+<img id="progress" src="icons/icon-512.png">
+<div id="output"></div>
+<div id="buttons" style="display: none;">
+<button id="button-video" data-l10n-id="button-video">(button-video)</button>
+<button id="button-image" data-l10n-id="button-image">(button-image)</button>
+<button id="button-about" data-l10n-id="button-about">(button-about)</button>
+<button id="button-abort" data-l10n-id="button-abort">(button-abort)</button>
+<button id="button-done" data-l10n-id="button-done">(button-done)</button>
+</div>
+<script src="js/app.js"></script>
+</body></html>

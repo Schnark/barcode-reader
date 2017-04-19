@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg">
+	<clipPath id="circle">
+		<circle cx="30" cy="30" r="29"/>
+	</clipPath>
+	<g>
+		<image xlink:href="barcode.png" x="0" y="0" height="60" width="60" preserveAspectRatio="none" clip-path="url(#circle)"/>
+		<image xlink:href="qrcode.svg" x="9.4939" y="9.4939" height="41.0122" width="41.0122"/>
+	</g>
+</svg>

@@ -1,0 +1,17 @@
+{
+	"@comment": "Note that the code to transform these data into a webpage is in https://github.com/Schnark/schnark.github.io",
+	"title": {
+		"en": "QR Scanner – App for Firefox OS",
+		"de": "QR-Leser – App für Firefox OS"
+	},
+	"serviceworker": true,
+	"icon": "icons/icon-128.png",
+	"screenshots": [
+		"2017-04-18-17-51-15.png",
+		"2017-04-18-17-50-59.png"
+	],
+	"desc": {
+		"en": ["This app reades QR codes and other barcodes. You can use it with a live image from the camera or from any other image."],
+		"de": ["Diese App liest QR-Codes und andere Strichcodes. Du kannst sie mit dem Livebild der Kamera oder einem beliebigen anderen Bild."]
+	}
+}
