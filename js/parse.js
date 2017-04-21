@@ -57,7 +57,7 @@ function vcard (data) {
 
 function mecard (data) {
 	//the vcard parser handles mecards quite well
-	return vcard(data.replace(/^MECARD:/i, '').replace(/;/g, '\n'));
+	return vcard(data.replace(/^MECARD:/i, '').replace(/;/g, '\n').replace(/¥(.)/g, '$1'));
 }
 
 function vevent (data) {
@@ -193,9 +193,10 @@ function getGS1Region (region) {
 	return '';
 }
 
+//some tests: http://qr-practices.pbworks.com/w/page/4506607/tests
 var parsers = [
 {
-	re: /^https?:\/\//i,
+	re: /^https?:\/\/\S+/i,
 	parse: function (data) {
 		return {
 			html: _('url', {url: makeLink(data)}),
@@ -204,6 +205,39 @@ var parsers = [
 				data: {
 					type: 'url',
 					url: data
+				}
+			},
+			activityLabel: _('url-button'),
+			raw: false
+		};
+	}
+}, {
+	re: /^(?:URLTO:|MEBKM:TITLE:.*?;URL:)(https?:\/\/\S+[^\s;]);*$/i,
+	parse: function (data, link) {
+		link = link.replace(/¥(.)/g, '$1');
+		return {
+			html: _('url', {url: makeLink(link)}),
+			activity: {
+				name: 'view',
+				data: {
+					type: 'url',
+					url: link
+				}
+			},
+			activityLabel: _('url-button'),
+			raw: true
+		};
+	}
+}, {
+	re: /^(.*?)\b(https?:\/\/\S+)(.*)$/,
+	parse: function (data, pre, link, post) {
+		return {
+			html: escape(pre) + makeLink(link) + escape(post),
+			activity: {
+				name: 'view',
+				data: {
+					type: 'url',
+					url: link
 				}
 			},
 			activityLabel: _('url-button'),
@@ -243,6 +277,22 @@ var parsers = [
 		};
 	}
 }, {
+	re: /^[a-z0-9_.\-]+@[a-z0-9_\-]+(?:\.[a-z0-9_\-]+)+$/i,
+	parse: function (data) {
+		return {
+			html: _('email', {email: makeLink('mailto:' + data, data)}),
+			activity: {
+				name: 'new',
+				data: {
+					type: 'mail',
+					url: 'mailto:' + data
+				}
+			},
+			activityLabel: _('email-button'),
+			raw: false
+		};
+	}
+}, {
 	re: /^tel:(\+?[0-9]+)$/i,
 	parse: function (data, tel) {
 		return {
@@ -258,7 +308,7 @@ var parsers = [
 		};
 	}
 }, {
-	re: /^smsto:(\+?[0-9]+)(?::(.*))?$/i,
+	re: /^(?:sms|mms)(?:to)?:(\+?[0-9]+)(?::(.*))?$/i,
 	parse: function (data, tel, sms) {
 		return {
 			html: sms ? _('sms-text', {tel: makeLink(data, tel), sms: escape(sms)}) :

@@ -23,7 +23,7 @@ self.onmessage = function(e) {
     var result = zbarProcessImageData(e.data.imageData, e.data.width, e.data.height);
     if (result.length > 0) {
         postMessage({
-            data: result[0][2],
+            data: fixUnicode(result[0][2]),
             format: result[0][0],
             id: e.data.id
         });
@@ -33,6 +33,22 @@ self.onmessage = function(e) {
             id: e.data.id
         });
     }
+}
+
+//the original code has issues with Unicode
+//detect and fix this
+//this is just from observations, I don't know what's actually going on
+function fixUnicode (text) {
+	return text.replace(/\uFF83(.)/g, function (all, c) {
+		c = c.charCodeAt(0);
+		if (0xF810 <= c && c < 0xF900) {
+			return String.fromCharCode(c - 0xF810);
+		}
+		if (0xFF00 <= c && c < 0x10000) {
+			return String.fromCharCode(c - 0xFE80);
+		}
+		return all;
+	});
 }
 
 function Log(message) {
