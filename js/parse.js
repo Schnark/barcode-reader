@@ -196,7 +196,7 @@ function getGS1Region (region) {
 //some tests: http://qr-practices.pbworks.com/w/page/4506607/tests
 var parsers = [
 {
-	re: /^https?:\/\/\S+/i,
+	re: /^https?:\/\/\S+$/i,
 	parse: function (data) {
 		return {
 			html: _('url', {url: makeLink(data)}),

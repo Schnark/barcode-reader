@@ -1,5 +1,5 @@
 {
-	"version": "1.1",
+	"version": "1.2",
 	"name": "QR Scanner",
 	"locales": {
 		"de": {
@@ -7,7 +7,7 @@
 		}
 	},
 	"description": "Barcode reader for QR codes and other barcodes",
-	"size": 199199,
+	"size": 199538,
 	"package_path": "http://localhost:8080/barcode-reader.zip",
 	"icons": {
 		"128": "/icons/icon-128.png",
