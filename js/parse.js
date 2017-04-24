@@ -229,7 +229,7 @@ var parsers = [
 		};
 	}
 }, {
-	re: /^(.*?)\b(https?:\/\/\S+)(.*)$/,
+	re: /^([\s\S]*?)\b(https?:\/\/\S+)([\s\S]*)$/,
 	parse: function (data, pre, link, post) {
 		return {
 			html: escape(pre) + makeLink(link) + escape(post),
@@ -522,7 +522,7 @@ var parsers = [
 		};
 	}
 }, {
-	re: /.{20,}/,
+	re: /[\s\S]{20,}/,
 	parse: function () {
 		return {
 			file: 'data.txt',

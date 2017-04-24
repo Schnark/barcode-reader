@@ -7,7 +7,7 @@
 		}
 	},
 	"description": "Barcode reader for QR codes and other barcodes",
-	"size": 199538,
+	"size": 199204,
 	"package_path": "http://localhost:8080/barcode-reader.zip",
 	"icons": {
 		"128": "/icons/icon-128.png",
