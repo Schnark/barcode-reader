@@ -205,6 +205,9 @@ function runPhoto () {
 			showResult(false);
 			return;
 		}
+		//we could use ['zbar', 'datamatrix'] here (that's why I ported the code)
+		//but it has a bad recognition, bad performance, and most of the time
+		//you just get a cryptic numeric code that doesn't help you anyway
 		decodeFromInput(img, ['zbar'], false, function (data, format) {
 			showResult(data, format);
 		});

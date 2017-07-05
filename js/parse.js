@@ -12,7 +12,7 @@ function escape (raw) {
 }
 
 function makeLink (href, label) {
-	return '<a target="_blank" href="' + escape(href) + '">' + escape(label || href) + '</a>';
+	return '<a target="_blank" rel="noopener" href="' + escape(href) + '">' + escape(label || href) + '</a>';
 }
 
 function vcard (data) {
