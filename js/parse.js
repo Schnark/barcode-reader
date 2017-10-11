@@ -229,22 +229,6 @@ var parsers = [
 		};
 	}
 }, {
-	re: /^([\s\S]*?)\b(https?:\/\/\S+)([\s\S]*)$/,
-	parse: function (data, pre, link, post) {
-		return {
-			html: escape(pre) + makeLink(link) + escape(post),
-			activity: {
-				name: 'view',
-				data: {
-					type: 'url',
-					url: link
-				}
-			},
-			activityLabel: _('url-button'),
-			raw: false
-		};
-	}
-}, {
 	re: /^www\.\S+$/,
 	parse: function (data) {
 		return {
@@ -518,6 +502,22 @@ var parsers = [
 	parse: function (data) {
 		return {
 			html: _('numeric', {n: data}),
+			raw: false
+		};
+	}
+}, {
+	re: /^([\s\S]*?)\b(https?:\/\/\S+)([\s\S]*)$/,
+	parse: function (data, pre, link, post) {
+		return {
+			html: escape(pre) + makeLink(link) + escape(post),
+			activity: {
+				name: 'view',
+				data: {
+					type: 'url',
+					url: link
+				}
+			},
+			activityLabel: _('url-button'),
 			raw: false
 		};
 	}
