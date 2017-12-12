@@ -13,5 +13,9 @@
 	"desc": {
 		"en": ["This app reades QR codes and other barcodes. You can use it with a live image from the camera or from any other image."],
 		"de": ["Diese App liest QR-Codes und andere Strichcodes. Du kannst sie mit dem Livebild der Kamera oder einem beliebigen anderen Bild verwenden."]
+	},
+	"restrictions": {
+		"en": "Note that it will behave a bit differently regarding sharing the result with other apps if you don’t use Firefox OS.",
+		"de": "Beachte, dass sie sich ein bisschen unterschiedlich verhält bezüglich des Teilens des Ergebnisses mit anderen Apps, wenn du nicht Firefox OS verwendest."
 	}
 }

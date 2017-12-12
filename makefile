@@ -14,15 +14,15 @@ icons: $(ICONPRE)128.png $(ICONPRE)512.png
 
 $(ICONPRE)128.png: icon.svg
 	rsvg-convert -w 128 icon.svg -o $(ICONPRE)128.png
-	optipng $(ICONPRE)128.png
+	optipng -o7 $(ICONPRE)128.png
 
 $(ICONPRE)512.png: icon.svg
 	rsvg-convert -w 512 icon.svg -o $(ICONPRE)512.png
-	optipng $(ICONPRE)512.png
+	optipng -o7 $(ICONPRE)512.png
 
 $(NAME).zip: clean icons $(CONTENTS)
 	rm -f $(NAME).zip
-	zip -r $(NAME).zip $(CONTENTS)
+	zip -r -9 $(NAME).zip $(CONTENTS)
 
 #the sed script does the following:
 #look for the line with "launch_path"

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
-<html><head><title data-l10n-id="title">QR and barcode scanner</title>
+<html><head><title data-l10n-id="title">QR and Barcode Scanner</title>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, user-scalable=no">
+<meta name="viewport" content="width=device-width">
 <link rel="apple-touch-icon" sizes="180x180" href="more-icons/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="more-icons/favicon-32x32.png" sizes="32x32">
 <link rel="icon" type="image/png" href="more-icons/favicon-16x16.png" sizes="16x16">
@@ -17,12 +17,13 @@ if (navigator.serviceWorker && !(navigator.mozApps && navigator.mozApps.installP
 	navigator.serviceWorker.register('sw.js');
 }
 </script>
-<script src="js/lib/l10n.js"></script>
-<script src="js/lib/vcard.min.js"></script>
-<script src="js/reader.js"></script>
-<script src="js/parse.js"></script>
+<script src="js/lib/l10n.js" defer></script>
+<script src="js/lib/vcard.min.js" defer></script>
+<script src="js/reader.js" defer></script>
+<script src="js/parse.js" defer></script>
+<script src="js/app.js" defer></script>
 </head><body>
-<img id="progress" src="icons/icon-512.png">
+<img id="progress" src="icons/icon-512.png" alt="">
 <div id="output"></div>
 <div id="buttons" style="display: none;">
 <button id="button-video" data-l10n-id="button-video">(button-video)</button>
@@ -31,5 +32,4 @@ if (navigator.serviceWorker && !(navigator.mozApps && navigator.mozApps.installP
 <button id="button-abort" data-l10n-id="button-abort">(button-abort)</button>
 <button id="button-done" data-l10n-id="button-done">(button-done)</button>
 </div>
-<script src="js/app.js"></script>
 </body></html>
