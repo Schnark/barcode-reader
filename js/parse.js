@@ -318,6 +318,14 @@ var parsers = [
 		};
 	}
 }, {
+	re: /^bitcoin:([1-9a-z]+)/i, //eigentlich auch kein l, O, I
+	parse: function (data, bitcoin) {
+		return {
+			html: _('bitcoin', {bitcoin: bitcoin}),
+			raw: true
+		};
+	}
+}, {
 	re: /^wifi:/i,
 	parse: function () {
 		return {

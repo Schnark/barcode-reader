@@ -3,7 +3,7 @@
 "use strict";
 
 var PREFIX = 'barcode-reader',
-	VERSION = '1.5',
+	VERSION = '1.6',
 	FILES = [
 		'app.css',
 		'index.html',

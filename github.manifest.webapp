@@ -1,5 +1,5 @@
 {
-	"version": "1.5",
+	"version": "1.6",
 	"name": "QR Scanner",
 	"locales": {
 		"de": {
@@ -7,7 +7,7 @@
 		}
 	},
 	"description": "Barcode reader for QR codes and other barcodes",
-	"size": 190822,
+	"size": 191091,
 	"package_path": "https://schnark.github.io/barcode-reader/barcode-reader.zip",
 	"icons": {
 		"128": "/icons/icon-128.png",
